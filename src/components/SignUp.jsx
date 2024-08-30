@@ -1,14 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
-import { useNavigate } from "react-router-dom";
 import { db } from "../../firebase";
 import { doc, setDoc, collection, getDocs } from "firebase/firestore";
 import BeatLoader from "react-spinners/BeatLoader";
-// import Minus from "../../assets/icons/minus.png";
-// import upload from "../../../upload";
-// import { useUserStore } from "../../../userStore";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -18,30 +14,26 @@ const SignUp = () => {
   const [userName, setUserName] = useState("");
   const [loading, setLoading] = useState(false);
   const [userNameError, setUserNameError] = useState("");
-  const [selectedFile, setSelectedFile] = useState(null);
 
   const [firebaseError, setFirebaseError] = useState("");
-  //   const { fetchUserInfo } = useUserStore();
 
   const register = async () => {
     try {
-      let isUserNameUnique = true;
+      //   let isUserNameUnique = true;
 
-      // Unique userName check
-      const querySnapshot = await getDocs(collection(db, "users"));
-      querySnapshot?.forEach((doc) => {
-        const data = doc?.data();
-        if (data?.username && data?.username === userName) {
-          setUserNameError("username already exists");
-          isUserNameUnique = false;
-          return;
-        }
-      });
+      //   const querySnapshot = await getDocs(collection(db, "users"));
+      //   querySnapshot?.forEach((doc) => {
+      //     const data = doc?.data();
+      //     if (data?.username && data?.username === userName) {
+      //       setUserNameError("username already exists");
+      //       isUserNameUnique = false;
+      //       return;
+      //     }
+      //   });
 
-      // Stop execution if userName is not unique
-      if (!isUserNameUnique) {
-        return;
-      }
+      //   if (!isUserNameUnique) {
+      //     return;
+      //   }
 
       if (password !== confirmPassword) {
         setConfirmPasswordError("Password does not match");
@@ -54,37 +46,14 @@ const SignUp = () => {
         email,
         password
       );
-      //   let imageUrl = "";
-      //   if (selectedFile) {
-      //     imageUrl = await upload(selectedFile);
-      //   }
-      await setDoc(doc(db, "users", userCredential?.user?.uid), {
-        username: userName,
-        email: email,
-        id: userCredential?.user?.uid,
-        // avatar: imageUrl,
-        // blocked: [],
-      });
-      //   await setDoc(doc(db, "userchats", userCredential?.user?.uid), {
-      //     chats: [],
-      //   });
 
       console.log("account created successfully");
-      //   fetchUserInfo(userCredential?.user?.uid);
     } catch (error) {
       console.log(error.message);
       setFirebaseError(error.message);
     }
   };
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      setSelectedFile(file);
-    }
-  };
-  const removeFile = () => {
-    setSelectedFile(null);
-  };
+
   const nameChangeHandler = async (event) => {
     setUserName(event.target.value);
     setUserNameError("");
@@ -250,9 +219,9 @@ const SignUp = () => {
             </form>
             <div className=" flex justify-center gap-2 text-gray-400  text-sm">
               <p className="font-sans">Already have an account?</p>
-              {/* <Link to="/sign-in">
+              <Link to="/signin">
                 <p className=" text-white">Sign In</p>{" "}
-              </Link> */}
+              </Link>
             </div>
           </div>
         </div>

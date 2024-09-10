@@ -80,18 +80,18 @@ const Home = () => {
       </header>
       <div className=" flex w-full flex-col ">
         {/* Hero Section */}
-        <div className="md:relative md:z-20 md:mb-[750px] flex w-full flex-col bg-white gap-[60px]">
+        <div className="lg:relative lg:z-20 lg:mb-[750px] flex w-full flex-col bg-white gap-[60px]">
           <div className="flex w-full bg-gradient-to-b items-center from-green-100 via-green-200 to-green-300 md:p-0 p-6 lg:min-h-screen min-h-fit md:rounded-br-[120px]">
-            <div className="container mx-auto max-w-[1400px] md:px-0 px-2 flex md:justify-between justify-center items-center  ">
-              <div className="flex  flex-col gap-4 lg:pl-0 pl-4">
-                <div className="flex flex-col  md:text-5xl text-4xl text-center md:text-left   lg:text-7xl gap-4">
+            <div className="container mx-auto max-w-[1500px] md:px-0 px-2 flex md:justify-between justify-center items-center  ">
+              <div className="flex  flex-col gap-4 lg:pl-2 pl-4">
+                <div className="flex flex-col  md:text-5xl text-4xl text-center md:text-left   lg:text-7xl md:font-semibold gap-4">
                   <span>Harnessing AI to</span>
                   <span>Empower</span>
                   <span>Workplace</span>
                   <span>Safety.</span>
                 </div>
 
-                <button className=" bg-green-600 text-white p-2 px-6 rounded-xl w-fit text-md">
+                <button className=" bg-green-600 hover:bg-green-500 text-white p-2 px-6 rounded-xl w-fit text-md">
                   Try for free, No credit card required{" "}
                 </button>
               </div>
@@ -139,7 +139,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="md:fixed md:z-10 md:bottom-0 w-full md:h-[710px] ">
+        <div className="lg:fixed lg:z-10 lg:bottom-0 w-full lg:h-[710px] ">
           <Footer />
         </div>
       </div>

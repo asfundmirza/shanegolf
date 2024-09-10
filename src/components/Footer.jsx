@@ -5,7 +5,7 @@ const Footer = () => {
     <footer class="bg-white dark:bg-gray-900">
       <div class="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row md:justify-between  items-center ">
-          <div className="flex flex-col justify-between  items-center">
+          <div className="flex flex-col justify-between  items-center md:items-start">
             <img src={Logo1} alt="logo" className=" object-cover w-[250px] " />
             <div className="flex flex-col text-white/80 font-bold text-3xl">
               <span>Get the answers you need,</span>
@@ -23,8 +23,8 @@ const Footer = () => {
           </p>
         </div>
 
-        <div class="mt-16 grid grid-cols-1 gap-8 border-t border-gray-100 pt-16 md:grid-cols-4 lg:grid-cols-6 dark:border-gray-800">
-          <div class="text-center sm:text-left">
+        <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 gap-8 border-t  border-gray-100 pt-16 md:grid-cols-4 lg:grid-cols-6 dark:border-gray-800">
+          <div class="text-center sm:text-left ">
             <p class="text-lg font-medium text-gray-900 dark:text-white">
               About Us
             </p>
@@ -175,7 +175,7 @@ const Footer = () => {
               </p>
 
               <form class="mt-4">
-                <div class="flex flex-col gap-4 sm:flex-row lg:flex-col lg:items-start">
+                <div class="flex flex-col gap-4 md:flex-row lg:flex-col lg:items-start ">
                   <label for="email" class="sr-only">
                     Email
                   </label>
@@ -187,7 +187,7 @@ const Footer = () => {
                   />
 
                   <button
-                    class="block rounded-full bg-green-600 px-8 py-3 font-medium text-white transition hover:bg-green-500"
+                    class="block rounded-full bg-green-600  px-8 py-3 w-fit font-medium text-white transition hover:bg-green-500"
                     type="submit"
                   >
                     Subscribe

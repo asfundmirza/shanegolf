@@ -80,22 +80,22 @@ const Home = () => {
       <div className="flex w-full flex-col gap-[60px]">
         {/* Hero Section */}
 
-        <div className="flex w-full bg-gradient-to-b items-center from-green-100 via-green-200 to-green-300 min-h-screen rounded-br-[120px]">
-          <div className="container mx-auto max-w-[1400px] flex justify-between items-center  ">
-            <div className="flex  flex-col gap-4">
-              <div className="flex flex-col text-7xl gap-4">
+        <div className="flex w-full bg-gradient-to-b items-center from-green-100 via-green-200 to-green-300 md:p-0 p-6 lg:min-h-screen min-h-fit md:rounded-br-[120px]">
+          <div className="container mx-auto max-w-[1400px] md:px-0 px-2 flex md:justify-between justify-center items-center  ">
+            <div className="flex  flex-col gap-4 lg:pl-0 pl-4">
+              <div className="flex flex-col md:text-5xl text-4xl text-center md:text-left   lg:text-7xl gap-4">
                 <span>Harnessing AI to</span>
                 <span>Empower</span>
                 <span>Workplace</span>
                 <span>Safety.</span>
               </div>
 
-              <button className=" bg-green-600 text-white p-2 px-6 rounded-xl w-fit text-xl">
+              <button className=" bg-green-600 text-white p-2 px-6 rounded-xl w-fit text-md">
                 Try for free, No credit card required{" "}
               </button>
             </div>
 
-            <div className="flex flex-1  w-full     ">
+            <div className="hidden md:flex flex-1  w-full     ">
               <div className="flex flex-1  items-center justify-center object-fill">
                 <img src={HeroSectionImage} alt="img " className="w-full " />
               </div>
@@ -105,9 +105,9 @@ const Home = () => {
 
         {/* Novice Section */}
 
-        <div className="flex flex-col  w-full items-center">
+        <div className="flex flex-col  w-full items-center px-4">
           <div className="flex flex-col gap-10 max-w-[1200px]">
-            <div className="flex flex-col gap-4 items-center text-4xl">
+            <div className="flex flex-col gap-4 items-center text-center text-4xl">
               <span>From Novice to Veteran</span>
               <span>
                 Safety Tools for{" "}

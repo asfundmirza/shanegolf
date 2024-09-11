@@ -13,10 +13,8 @@ const VideoSection = () => {
   const [buttonAnimating, setButtonAnimating] = useState(false);
   const fullText = ` Safety-chat is a specialized chatbot designed exclusively for
       answering safety-related questions, ensuring accuracy by eliminating
-      hallucinations. Unlike other models, it is trained solely on
-      regulations and provides precise information with citations. Users
-      can swiftly obtain answers to OSHA, MSHA, and EPA queries, with
-      tailored responses guiding them effectively.`;
+      hallucinations. Unlike other models, Users
+      can swiftly obtain answers to OSHA, MSHA, and EPA queries.`;
 
   useEffect(() => {
     if (inView) {
@@ -45,9 +43,9 @@ const VideoSection = () => {
     }
   }, [typingComplete]);
   return (
-    <div className="flex flex-col md:flex-row w-full md:gap-[80px] p-4 items-center bg-gradient-to-b from-green-100 via-green-200 to-green-300">
+    <div className="flex flex-col lg:flex-row w-full gap-[20px] xl:gap-[80px] p-8 items-center bg-gradient-to-b from-green-100 via-green-200 to-green-300">
       {/* Video - 70% of the width */}
-      <div className="w-full md:w-[70%]  shadow-2xl shadow-black rounded-2xl">
+      <div className="w-full xl:w-[70%]  shadow-2xl shadow-black rounded-2xl">
         <video
           src={Video1}
           controls
@@ -56,16 +54,16 @@ const VideoSection = () => {
       </div>
 
       {/* Text Content - 30% of the width */}
-      <div className="w-full md:w-[30%] h-full  p-8 px-[80px] flex  gap-8  flex-col md:ml-6 text-white bg-green-700 rounded-2xl ">
-        <h1 className=" font-bold text-4xl">
+      <div className="w-full xl:w-[30%]  p-8 xl:px-[80px] flex  gap-8  flex-col md:ml-6 text-white bg-green-700 rounded-2xl ">
+        <h1 className=" font-bold xl:text-4xl text-2xl">
           Get the answers you need, without the hallucinations.
         </h1>
         <div className="flex flex-col gap-4 ">
-          <div ref={ref} className="text-lg text-gray-200">
+          <div ref={ref} className="xl:text-lg text-sm text-gray-200">
             {displayText}
           </div>
           <button
-            className={`flex w-fit px-4 py-2 rounded-lg border ${
+            className={`flex w-fit  px-4 py-2 rounded-lg border ${
               buttonAnimating
                 ? "animate-bounceOnce bg-green-500 border-green-500"
                 : "bg-transparent border-white"

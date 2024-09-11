@@ -85,7 +85,7 @@ const Home = () => {
           <div className="flex w-full bg-gradient-to-b items-center from-green-100 via-green-200 to-green-300 md:p-0 p-6 lg:min-h-screen min-h-fit md:rounded-br-[120px]">
             <div className="container mx-auto max-w-[1500px] md:px-0 px-2 flex md:justify-between justify-center items-center  ">
               <div className="flex  flex-col gap-4 lg:pl-2 pl-4">
-                <div className="flex flex-col  md:text-5xl text-4xl text-center md:text-left   lg:text-7xl md:font-semibold gap-4">
+                <div className="flex flex-col  md:text-5xl text-4xl text-center md:text-left   lg:text-7xl font-semibold  gap-4">
                   <span>Harnessing AI to</span>
                   <span>Empower</span>
                   <span>Workplace</span>
@@ -110,7 +110,7 @@ const Home = () => {
           <div className="flex flex-col  w-full items-center px-4">
             <div className="flex flex-col gap-10 max-w-[1200px]">
               <div className="flex flex-col gap-4 items-center text-center text-4xl">
-                <span>From Novice to Veteran</span>
+                <span className="md:flex hidden">From Novice to Veteran</span>
                 <span>
                   Safety Tools for{" "}
                   <span className=" font-bold text-green-600">

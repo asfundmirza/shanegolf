@@ -11,6 +11,7 @@ import { BotMessageSquare } from "lucide-react";
 import HeroSectionImage from "../assets/heroSection_image_copy.png";
 import Footer from "./Footer";
 import VideoSection from "./VideoSection";
+import InstantAccess from "./InstantAccess";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -141,6 +142,9 @@ const Home = () => {
           </div>
           <div>
             <VideoSection />
+          </div>
+          <div>
+            <InstantAccess />
           </div>
         </div>
         <div className="lg:fixed lg:z-10 lg:bottom-0 w-full lg:h-[710px] ">

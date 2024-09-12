@@ -12,6 +12,8 @@ import HeroSectionImage from "../assets/heroSection_image_copy.png";
 import Footer from "./Footer";
 import VideoSection from "./VideoSection";
 import InstantAccess from "./InstantAccess";
+import VideoScroll from "./VideoScroll";
+import Gallery from "./Gallery";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -145,6 +147,12 @@ const Home = () => {
           </div>
           <div>
             <InstantAccess />
+          </div>
+          <div>
+            <VideoScroll />
+          </div>
+          <div>
+            <Gallery />
           </div>
         </div>
         <div className="lg:fixed lg:z-10 lg:bottom-0 w-full lg:h-[710px] ">

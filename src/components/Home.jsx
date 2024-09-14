@@ -13,7 +13,7 @@ import Footer from "./Footer";
 import VideoSection from "./VideoSection";
 import InstantAccess from "./InstantAccess";
 import VideoScroll from "./VideoScroll";
-import Gallery from "./Gallery";
+import Gallery from "./GetStarted";
 
 const Home = () => {
   const navigate = useNavigate();

@@ -46,8 +46,8 @@ const InstantAccess = () => {
   }, []);
 
   return (
-    <div className="flex w-full container mx-auto p-8">
-      <div className="flex md:flex-row flex-col w-full justify-between items-center">
+    <div className="flex w-full container mx-auto justify-center p-8">
+      <div className="flex md:flex-row flex-col w-full max-w-[1200px] justify-between items-center">
         <div className="flex flex-1 flex-col md:items-start items-center gap-8">
           <div className="lg:text-5xl md:text-4xl flex flex-col md:gap-4 gap-2  text-3xl md:text-left text-center font-semibold text-gray-900">
             <span>Instant Access to</span>

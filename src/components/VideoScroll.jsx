@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import Video1 from "../assets/videos/2nd video.mp4";
 import Video2 from "../assets/videos/3rd video.mp4";
 import Video3 from "../assets/videos/4th video.mp4";
@@ -51,7 +51,7 @@ const VideoScroll = () => {
   return (
     <section
       ref={targetRef}
-      className="relative md:h-[300vh] h-fit bg-gray-900 rounded-[20px]"
+      className="relative md:h-[300vh] h-fit bg-gray-900 rounded-[20px] md:bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] md:bg-[size:24px_24px]"
     >
       <div className="sticky top-0  flex md:h-screen h-fit items-center overflow-hidden">
         <motion.div style={{ x }} className="flex gap-4">

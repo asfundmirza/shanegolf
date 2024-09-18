@@ -11,6 +11,9 @@ import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase";
+import PricingPage from "./pages/PricingPage";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -27,39 +30,47 @@ function App() {
 
   if (loading) {
     return (
-      <div className="flex w-ful h-screen justify-center items-center bg-black/25 text-2xl">
+      <div className="flex w-full h-screen justify-center items-center bg-black/25 text-2xl">
         Loading...
       </div>
     );
   }
 
   return (
-    <Routes>
-      <Route
-        path="/home"
-        element={user ? <Home /> : <Navigate to="/signin" replace />}
-      />
+    <Router>
+      <Header />
 
-      <Route
-        path="/signin"
-        element={!user ? <SignIn /> : <Navigate to="/home" replace />}
-      />
-      <Route
-        path="/signup"
-        element={!user ? <SignUp /> : <Navigate to="/home" replace />}
-      />
+      <Routes>
+        <Route
+          path="/home"
+          element={user ? <Home /> : <Navigate to="/signin" replace />}
+        />
+        <Route
+          path="/pricing"
+          element={user ? <PricingPage /> : <Navigate to="/signin" replace />}
+        />
+        <Route
+          path="/signin"
+          element={!user ? <SignIn /> : <Navigate to="/home" replace />}
+        />
+        <Route
+          path="/signup"
+          element={!user ? <SignUp /> : <Navigate to="/home" replace />}
+        />
+        <Route
+          path="/"
+          element={
+            user ? (
+              <Navigate to="/home" replace />
+            ) : (
+              <Navigate to="/signin" replace />
+            )
+          }
+        />
+      </Routes>
 
-      <Route
-        path="/"
-        element={
-          user ? (
-            <Navigate to="/home" replace />
-          ) : (
-            <Navigate to="/signin" replace />
-          )
-        }
-      />
-    </Routes>
+      <Footer />
+    </Router>
   );
 }
 

@@ -149,7 +149,7 @@ const PricingCards = () => {
           <div className="relative xl:w-10/12 xl:mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
               <div>
-                <div className="p-4 relative z-10  border bg-white rounded-xl md:p-10">
+                <div className="p-4 relative z-10  border bg-white rounded-xl md:p-10 hover:border-green-600 transition-transform transform hover:scale-105 duration-300">
                   <h3 className="text-xl font-bold text-gray-800">Essential</h3>
                   <div className="text-sm text-gray-500">
                     Essential Features you need.
@@ -209,14 +209,14 @@ const PricingCards = () => {
               </div>
 
               <div>
-                <div className="p-4 relative z-10 bg-gradient-to-b  from-green-200 via-green-300 to-green-500 border rounded-xl md:p-10">
+                <div className="p-4 relative z-10 bg-gradient-to-b  from-green-200 via-green-300 to-green-500  rounded-xl md:p-10 hover:border-green-600 transition-transform transform hover:scale-105 duration-300">
                   <h3 className="text-xl font-bold text-gray-800">
                     Full Suite
                   </h3>
                   <div className="text-sm text-gray-500">
                     A complete suite of safety tools and services.
                   </div>
-                  <span className="absolute top-0 end-0 rounded-se-lg rounded-es-xl text-xs font-medium bg-white text-black py-1.5 px-3">
+                  <span className="absolute top-0 end-0 rounded-se-xl rounded-es-xl text-xs font-medium bg-white text-black py-1.5 px-3">
                     Most popular
                   </span>
 

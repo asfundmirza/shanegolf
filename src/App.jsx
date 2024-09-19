@@ -14,6 +14,7 @@ import { auth } from "../firebase";
 import PricingPage from "./pages/PricingPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Company from "./pages/Company";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -48,6 +49,10 @@ function App() {
         <Route
           path="/pricing"
           element={user ? <PricingPage /> : <Navigate to="/signin" replace />}
+        />
+        <Route
+          path="/company"
+          element={user ? <Company /> : <Navigate to="/signin" replace />}
         />
         <Route
           path="/signin"

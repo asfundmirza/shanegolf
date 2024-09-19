@@ -2,9 +2,9 @@ import React from "react";
 
 const ClientSection = () => {
   return (
-    <div className="relative overflow-hidden pt-4 bg-white">
+    <div className="relative overflow-hidden pt-4 mb-[50px] bg-white">
       <svg
-        className="absolute -bottom-20 start-1/2 w-[1900px] transform -translate-x-1/2"
+        className="hidden md:block absolute -bottom-20 start-1/2 w-[1900px] transform -translate-x-1/2"
         width="2745"
         height="488"
         viewBox="0 0 2745 488"
@@ -96,7 +96,7 @@ const ClientSection = () => {
       <div className="relative z-10">
         <div className="max-w-5xl px-4 xl:px-0 mx-auto">
           <div className="mb-4">
-            <h2 className="text-neutral-400 md:text-xl text-lg">
+            <h2 className="text-neutral-400 md:text-xl text-md md:text-nowrap text-center">
               Trusted by Open Source, enterprise, and more than 99,000 of you
             </h2>
           </div>

@@ -32,9 +32,9 @@ const SuccessStories = () => {
 
   return (
     <div className="bg-green-600 bg-gradient-to-b from-green-50 to-transparent">
-      <div className="max-w-5xl px-4 xl:px-0 py-24 mx-auto">
+      <div className="max-w-5xl px-4 xl:px-0 py-14 mx-auto">
         <div className="max-w-3xl mb-10 lg:mb-14">
-          <h2 className="text-neutral-900 font-semibold text-2xl md:text-6xl md:leading-tight">
+          <h2 className="text-neutral-900 font-semibold text-4xl md:text-6xl md:leading-tight">
             Success stories
           </h2>
           <p className="mt-1 text-neutral-400">

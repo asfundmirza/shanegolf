@@ -1,4 +1,5 @@
 import React from "react";
+import TrustedClients from "./TrustedClients";
 
 const PricingCards = () => {
   const essentialsFeatures = [
@@ -136,38 +137,40 @@ const PricingCards = () => {
     },
   ];
   return (
-    <div className="lg:relative lg:z-20 lg:mb-[750px] flex w-full flex-col bg-white lg:gap-[60px] gap-[20px]">
-      <div class="overflow-hidden">
-        <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-          <div class="mx-auto max-w-2xl mb-8 lg:mb-14 text-center">
-            <h2 class="text-3xl lg:text-6xl text-gray-800 font-bold">
+    <div className=" lg:gap-[60px] gap-[20px]">
+      <div className="overflow-hidden">
+        <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+          <div className="mx-auto max-w-2xl mb-8 lg:mb-14 text-center">
+            <h2 className="text-3xl lg:text-6xl text-gray-800 font-bold">
               Pricing and Plans
             </h2>
           </div>
 
-          <div class="relative xl:w-10/12 xl:mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+          <div className="relative xl:w-10/12 xl:mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
               <div>
-                <div class="p-4 relative z-10  border bg-white rounded-xl md:p-10">
-                  <h3 class="text-xl font-bold text-gray-800">Essential</h3>
-                  <div class="text-sm text-gray-500">
+                <div className="p-4 relative z-10  border bg-white rounded-xl md:p-10">
+                  <h3 className="text-xl font-bold text-gray-800">Essential</h3>
+                  <div className="text-sm text-gray-500">
                     Essential Features you need.
                   </div>
 
-                  <div class="mt-5">
-                    <span class="text-6xl font-bold text-gray-800">$20</span>
-                    <span class="text-lg font-bold text-gray-800">.00</span>
-                    <span class="ms-3 text-gray-500">USD / monthly</span>
-                    <span class="ms-3 text-black font-bold">+ Add-Ons</span>
+                  <div className="mt-5">
+                    <span className="text-6xl font-bold text-gray-800">
+                      $20
+                    </span>
+                    <span className="text-lg font-bold text-gray-800">.00</span>
+                    <span className="ms-3 text-gray-500">USD / monthly</span>
+                    <span className="ms-3 text-black font-bold">+ Add-Ons</span>
                   </div>
 
-                  <div class="mt-5 grid grid-cols-1 gap-x-6 gap-y-2 py-4 first:pt-0 last:pb-0">
-                    <div class="space-y-2 text-sm sm:text-base">
+                  <div className="mt-5 grid grid-cols-1 gap-x-6 gap-y-2 py-4 first:pt-0 last:pb-0">
+                    <div className="space-y-2 text-sm sm:text-base">
                       {essentialsFeatures.map((feature, index) => (
-                        <div key={index} class="flex gap-x-3">
-                          <span class="mt-0.5 size-5 flex justify-center items-center rounded-full bg-white text-black border border-black">
+                        <div key={index} className="flex gap-x-3">
+                          <span className="mt-0.5 size-5 flex justify-center items-center rounded-full bg-white text-black border border-black">
                             <svg
-                              class="shrink-0 size-3.5"
+                              className="shrink-0 size-3.5"
                               xmlns="http://www.w3.org/2000/svg"
                               width="24"
                               height="24"
@@ -181,22 +184,22 @@ const PricingCards = () => {
                               <polyline points="20 6 9 17 4 12" />
                             </svg>
                           </span>
-                          <span class="text-gray-800">{feature}</span>
+                          <span className="text-gray-800">{feature}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <div class="mt-5 grid grid-cols-2 gap-x-4 py-4 first:pt-0 last:pb-0">
+                  <div className="mt-5 grid grid-cols-2 gap-x-4 py-4 first:pt-0 last:pb-0">
                     <div>
-                      <p class="text-sm text-gray-500">You can find</p>
-                      <p class="text-sm text-gray-500">Add-Ons below.</p>
+                      <p className="text-sm text-gray-500">You can find</p>
+                      <p className="text-sm text-gray-500">Add-Ons below.</p>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div className="flex justify-end">
                       <button
                         type="button"
-                        class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg  bg-green-600 text-white shadow-sm hover:bg-green-500"
+                        className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg  bg-green-600 text-white shadow-sm hover:bg-green-500"
                       >
                         Start Here
                       </button>
@@ -206,28 +209,32 @@ const PricingCards = () => {
               </div>
 
               <div>
-                <div class="p-4 relative z-10 bg-gradient-to-b  from-green-200 via-green-300 to-green-500 border rounded-xl md:p-10">
-                  <h3 class="text-xl font-bold text-gray-800">Full Suite</h3>
-                  <div class="text-sm text-gray-500">
+                <div className="p-4 relative z-10 bg-gradient-to-b  from-green-200 via-green-300 to-green-500 border rounded-xl md:p-10">
+                  <h3 className="text-xl font-bold text-gray-800">
+                    Full Suite
+                  </h3>
+                  <div className="text-sm text-gray-500">
                     A complete suite of safety tools and services.
                   </div>
-                  <span class="absolute top-0 end-0 rounded-se-lg rounded-es-xl text-xs font-medium bg-white text-black py-1.5 px-3">
+                  <span className="absolute top-0 end-0 rounded-se-lg rounded-es-xl text-xs font-medium bg-white text-black py-1.5 px-3">
                     Most popular
                   </span>
 
-                  <div class="mt-5">
-                    <span class="text-6xl font-bold text-gray-800">$150</span>
-                    <span class="text-lg font-bold text-gray-800">.00</span>
-                    <span class="ms-3 text-gray-500">USD / monthly</span>
+                  <div className="mt-5">
+                    <span className="text-6xl font-bold text-gray-800">
+                      $150
+                    </span>
+                    <span className="text-lg font-bold text-gray-800">.00</span>
+                    <span className="ms-3 text-gray-500">USD / monthly</span>
                   </div>
 
-                  <div class="mt-5 grid grid-cols-1 gap-x-6 gap-y-2 py-4 first:pt-0 last:pb-0">
-                    <div class="space-y-2 text-sm sm:text-base">
+                  <div className="mt-5 grid grid-cols-1 gap-x-6 gap-y-2 py-4 first:pt-0 last:pb-0">
+                    <div className="space-y-2 text-sm sm:text-base">
                       {essentialsFeatures.map((feature, index) => (
-                        <div key={index} class="flex gap-x-3">
-                          <span class="mt-0.5 size-5 flex justify-center items-center rounded-full bg-white text-black border border-black">
+                        <div key={index} className="flex gap-x-3">
+                          <span className="mt-0.5 size-5 flex justify-center items-center rounded-full bg-white text-black border border-black">
                             <svg
-                              class="shrink-0 size-3.5"
+                              className="shrink-0 size-3.5"
                               xmlns="http://www.w3.org/2000/svg"
                               width="24"
                               height="24"
@@ -241,22 +248,22 @@ const PricingCards = () => {
                               <polyline points="20 6 9 17 4 12" />
                             </svg>
                           </span>
-                          <span class="text-gray-800">{feature}</span>
+                          <span className="text-gray-800">{feature}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <div class="mt-5 grid grid-cols-2 gap-x-4 py-4 first:pt-0 last:pb-0">
+                  <div className="mt-5 grid grid-cols-2 gap-x-4 py-4 first:pt-0 last:pb-0">
                     <div>
-                      <p class="text-sm text-white">All Add-Ons</p>
-                      <p class="text-sm text-white">are included.</p>
+                      <p className="text-sm text-white">All Add-Ons</p>
+                      <p className="text-sm text-white">are included.</p>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div className="flex justify-end">
                       <button
                         type="button"
-                        class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-xl border   bg-white text-green-600 hover:text-green-500 "
+                        className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-xl border   bg-white text-green-600 hover:text-green-500 "
                       >
                         Start Here
                       </button>
@@ -266,9 +273,9 @@ const PricingCards = () => {
               </div>
             </div>
 
-            <div class="hidden md:block absolute top-0 end-0 translate-y-16 translate-x-16">
+            <div className="hidden md:block absolute top-0 end-0 translate-y-16 translate-x-16">
               <svg
-                class="w-16 h-auto text-orange-500"
+                className="w-16 h-auto text-orange-500"
                 width="121"
                 height="135"
                 viewBox="0 0 121 135"
@@ -296,9 +303,9 @@ const PricingCards = () => {
               </svg>
             </div>
 
-            <div class="hidden md:block absolute  bottom-0 start-0 translate-y-16 -translate-x-16">
+            <div className="hidden md:block absolute  bottom-0 start-0 translate-y-16 -translate-x-16">
               <svg
-                class="w-56 h-auto text-cyan-500"
+                className="w-56 h-auto text-cyan-500"
                 width="347"
                 height="188"
                 viewBox="0 0 347 188"
@@ -315,34 +322,38 @@ const PricingCards = () => {
             </div>
           </div>
 
-          <div class="mt-7 text-center">
-            <p class="text-xs text-gray-400">Prices in USD. Taxes may apply.</p>
+          <div className="mt-7 text-center">
+            <p className="text-xs text-gray-400">
+              Prices in USD. Taxes may apply.
+            </p>
           </div>
         </div>
       </div>
 
-      <div class="relative">
-        <div class="max-w-[70rem] px-4 py-10 sm:px-6 lg:px-8 md:py-14 lg:py-20 mx-auto">
-          <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-            <h2 class="text-3xl font-bold lg:text-6xl md:leading-tight">
+      <div className="relative">
+        <div className="max-w-[70rem] px-4 py-10 sm:px-6 lg:px-8 md:py-14 lg:py-20 mx-auto">
+          <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+            <h2 className="text-3xl font-bold lg:text-6xl md:leading-tight">
               Add-Ons
             </h2>
           </div>
 
-          <div class="grid grid-cols-4 lg:gap-[90px] gap-[50px]">
-            <div class="hidden lg:block col-span-2 ">
-              <div class="font-semibold text-2xl mb-[50px]   ">Features</div>
+          <div className="grid grid-cols-4 lg:gap-[90px] gap-[50px]">
+            <div className="hidden lg:block col-span-2 ">
+              <div className="font-semibold text-2xl mb-[50px]   ">
+                Features
+              </div>
               {addOns.map((addOn, index) => (
                 <div key={index} className=" flex flex-col gap-1 mt-9  text-sm">
                   <p className=" font-bold ">{addOn.name}</p>
                   <p className="text-gray-500 text-xs">{addOn.description}</p>
                 </div>
               ))}
-              <div class="font-semibold text-2xl mt-[50px]   ">Total</div>
+              <div className="font-semibold text-2xl mt-[50px]   ">Total</div>
             </div>
 
-            <div class="lg:col-span-1 md:col-span-2 col-span-full lg:border-none border border-gray-200 rounded-xl lg:py-0 py-8">
-              <span class="flex w-full justify-center font-semibold text-2xl lg:mb-2 mb-[50px]   ">
+            <div className="lg:col-span-1 md:col-span-2 col-span-full lg:border-none border border-gray-200 rounded-xl lg:py-0 py-8">
+              <span className="flex w-full justify-center font-semibold text-2xl lg:mb-2 mb-[50px]   ">
                 Essential
               </span>
 
@@ -382,13 +393,13 @@ const PricingCards = () => {
                 <div className="block lg:hidden font-semibold text-sm">
                   Total
                 </div>
-                <div class="flex w-full justify-center font-semibold border-b border-gray-200 text-lg lg:mt-[48px]   ">
+                <div className="flex w-full justify-center font-semibold border-b border-gray-200 text-lg lg:mt-[48px]   ">
                   20$ + Add-Ons
                 </div>
               </div>
-              <div class="lg:col-span-1 flex w-full justify-center">
+              <div className="lg:col-span-1 flex w-full justify-center">
                 <a
-                  class="lg:w-full w-fit py-3 px-4 inline-flex justify-center mt-[30px] items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-green-600 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50"
+                  className="lg:w-full w-fit py-3 px-4 inline-flex justify-center mt-[30px] items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-green-600 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50"
                   href="#"
                 >
                   Get started
@@ -396,8 +407,8 @@ const PricingCards = () => {
               </div>
             </div>
 
-            <div class="lg:col-span-1 md:col-span-2 col-span-full lg:border-none border border-gray-200 rounded-xl lg:py-0 py-8">
-              <span class="flex w-full justify-center font-semibold text-2xl lg:mb-2 mb-[50px]   ">
+            <div className="lg:col-span-1 md:col-span-2 col-span-full lg:border-none border border-gray-200 rounded-xl lg:py-0 py-8">
+              <span className="flex w-full justify-center font-semibold text-2xl lg:mb-2 mb-[50px]   ">
                 Full Suite
               </span>
 
@@ -435,13 +446,13 @@ const PricingCards = () => {
                 <div className="block lg:hidden font-semibold text-sm">
                   Total
                 </div>
-                <div class="flex w-full justify-center font-semibold border-b border-gray-200 text-lg lg:mt-[48px]   ">
+                <div className="flex w-full justify-center font-semibold border-b border-gray-200 text-lg lg:mt-[48px]   ">
                   150$
                 </div>
               </div>
-              <div class="lg:col-span-1 flex w-full justify-center">
+              <div className="lg:col-span-1 flex w-full justify-center">
                 <a
-                  class="lg:w-full w-fit py-3 px-4 inline-flex justify-center mt-[30px] items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-green-600 text-white shadow-sm hover:bg-green-500 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-green-500"
+                  className="lg:w-full w-fit py-3 px-4 inline-flex justify-center mt-[30px] items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-green-600 text-white shadow-sm hover:bg-green-500 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-green-500"
                   href="#"
                 >
                   Get started

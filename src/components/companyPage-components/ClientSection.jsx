@@ -96,7 +96,7 @@ const ClientSection = () => {
       <div className="relative z-10">
         <div className="max-w-5xl px-4 xl:px-0 mx-auto">
           <div className="mb-4">
-            <h2 className="text-neutral-400 text-xl">
+            <h2 className="text-neutral-400 md:text-xl text-lg">
               Trusted by Open Source, enterprise, and more than 99,000 of you
             </h2>
           </div>

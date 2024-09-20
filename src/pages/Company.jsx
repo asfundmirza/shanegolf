@@ -4,6 +4,7 @@ import ClientSection from "../components/companyPage-components/ClientSection";
 import SuccessStories from "../components/companyPage-components/SuccessStories";
 import Testimonials from "../components/companyPage-components/Testimonials";
 import FeatureNav from "../components/companyPage-components/FeatureNav";
+import ApproachSection from "../components/companyPage-components/ApproachSection";
 
 const Company = () => {
   return (
@@ -12,7 +13,8 @@ const Company = () => {
       <ClientSection />
       <SuccessStories />
       <FeatureNav />
-      {/* <Testimonials /> */}
+      <ApproachSection />
+      <Testimonials />
     </div>
   );
 };

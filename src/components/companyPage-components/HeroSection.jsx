@@ -4,13 +4,15 @@ const HeroSection = () => {
   return (
     <div className="bg-white">
       <div className="max-w-5xl mx-auto px-4 xl:px-0 pt-24 lg:pt-32 pb-24">
-        <h1 className="font-semibold text-3xl md:text-6xl">
-          <span className="text-green-600 text-5xl">Safety Chat:</span> Your
-          Safety Companion for Secure, Efficient Workplace Communication
+        <h1 className="font-semibold text-3xl md:text-5xl">
+          <span className="text-green-600 md:text-6xl text-5xl">
+            Safety Chat:
+          </span>{" "}
+          Your Safety Companion for Secure, Efficient Workplace Communication
         </h1>
 
         <div className="max-w-4xl">
-          <p className="mt-5 text-lg">
+          <p className="mt-5 text-lg text-neutral-400">
             Safety Chat is a cutting-edge platform designed to enhance workplace
             safety by equipping workers with essential safety tools. With
             features like an AI Chat trained on OSHA regulations, a Toolbox Talk

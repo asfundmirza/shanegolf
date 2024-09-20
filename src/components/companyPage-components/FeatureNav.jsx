@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Shield } from "lucide-react";
 import { LayoutGrid } from "lucide-react";
 import { ToyBrick } from "lucide-react";
+import pic1 from "../../assets/featureNav-pic1.webp";
+import pic2 from "../../assets/featureNav-pic2.webp";
+import pic3 from "../../assets/featureNav-pic3.webp";
 
 const FeatureNav = () => {
   const [activeTab, setActiveTab] = useState("tabs-with-card-1");
@@ -10,7 +13,7 @@ const FeatureNav = () => {
     setActiveTab(tabId);
   };
   return (
-    <div className="max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+    <div className="max-w-[75rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
       <div className="relative p-6 md:p-16">
         <div className="relative z-10 lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
           <div className="mb-10 lg:mb-0 lg:col-span-6 lg:col-start-8 lg:order-2">
@@ -114,10 +117,11 @@ const FeatureNav = () => {
                     id="tabs-with-card-1"
                     role="tabpanel"
                     aria-labelledby="tabs-with-card-item-1"
+                    className="xl:w-[450px] xl:h-[700px] lg:w-[420px] lg:h-[600px]"
                   >
                     <img
-                      className="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20"
-                      src="https://images.unsplash.com/photo-1605629921711-2f6b00c6bbf4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&h=720&q=80"
+                      className="shadow-xl xl:w-[450px] xl:h-[700px] lg:w-[420px] lg:h-[600px] object-cover shadow-gray-200 rounded-xl dark:shadow-gray-900/20"
+                      src={pic1}
                       alt="Features Image"
                     />
                   </div>
@@ -128,10 +132,11 @@ const FeatureNav = () => {
                     id="tabs-with-card-2"
                     role="tabpanel"
                     aria-labelledby="tabs-with-card-item-2"
+                    className="xl:w-[450px] xl:h-[700px] lg:w-[420px] lg:h-[600px]"
                   >
                     <img
-                      className="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20"
-                      src="https://images.unsplash.com/photo-1665686306574-1ace09918530?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&h=720&q=80"
+                      className="shadow-xl xl:w-[450px] xl:h-[700px] lg:w-[420px] lg:h-[600px] object-cover shadow-gray-200 rounded-xl dark:shadow-gray-900/20"
+                      src={pic2}
                       alt="Features Image"
                     />
                   </div>
@@ -142,17 +147,18 @@ const FeatureNav = () => {
                     id="tabs-with-card-3"
                     role="tabpanel"
                     aria-labelledby="tabs-with-card-item-3"
+                    className="xl:w-[450px] xl:h-[700px] lg:w-[420px] lg:h-[600px]"
                   >
                     <img
-                      className="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20"
-                      src="https://images.unsplash.com/photo-1598929213452-52d72f63e307?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&h=720&q=80"
+                      className="shadow-xl xl:w-[450px] xl:h-[700px] lg:w-[420px] lg:h-[600px] object-cover shadow-gray-200 rounded-xl dark:shadow-gray-900/20"
+                      src={pic3}
                       alt="Features Image"
                     />
                   </div>
                 )}
               </div>
 
-              <div className="hidden absolute top-0 end-0 translate-x-20 md:block lg:translate-x-20">
+              <div className="hidden absolute top-0 end-0 translate-x-20 lg:block lg:translate-x-20">
                 <svg
                   className="w-16 h-auto text-green-600"
                   width="121"

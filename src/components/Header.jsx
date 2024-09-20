@@ -18,7 +18,7 @@ const Header = () => {
     { path: "/home", name: "Home" },
     { path: "/pricing", name: "Pricing" },
     { path: "/company", name: "Company" },
-    { path: "/about-us", name: "About Us" },
+    { path: "/contact", name: "Contact" },
   ];
   return (
     <header className="container mx-auto p-4 flex justify-between">

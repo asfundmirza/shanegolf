@@ -1,5 +1,6 @@
 import React from "react";
 import Logo1 from "../assets/Logo1.png";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="lg:fixed lg:z-10 lg:bottom-0 w-full lg:h-[710px] ">
@@ -150,12 +151,13 @@ const Footer = () => {
 
               <ul class="mt-8 space-y-4 text-sm">
                 <li>
-                  <a
+                  <Link
+                    to="/faq"
                     class="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
                     href="#"
                   >
                     FAQs
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
@@ -165,6 +167,15 @@ const Footer = () => {
                   >
                     Support
                   </a>
+                </li>
+
+                <li>
+                  <Link
+                    class="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                    to="/terms&conditions"
+                  >
+                    Terms & Conditions
+                  </Link>
                 </li>
               </ul>
             </div>

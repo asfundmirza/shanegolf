@@ -142,6 +142,11 @@ const Testimonials = () => {
           </div>
         </div>
       </div>
+      <div className="flex mx-auto md:py-20 md:pt-[200px] py-14">
+        <button className="px-4 md:px-8 md:py-4 py-2 bg-green-600 rounded-xl text-white font-bold md:text-2xl text-xl mx-auto">
+          Get Started
+        </button>
+      </div>
     </div>
   );
 };

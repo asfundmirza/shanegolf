@@ -17,6 +17,7 @@ import Footer from "./components/Footer";
 import Company from "./pages/Company";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
+import TermsAndConditions from "./components/TermsAndConditions";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -59,6 +60,12 @@ function App() {
         <Route
           path="/faq"
           element={user ? <FAQ /> : <Navigate to="/signin" replace />}
+        />
+        <Route
+          path="/terms&conditions"
+          element={
+            user ? <TermsAndConditions /> : <Navigate to="/signin" replace />
+          }
         />
         <Route
           path="/contact"

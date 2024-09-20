@@ -9,7 +9,7 @@ const LinkSection = () => {
     <div className="max-w-6xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
       <div className=" grid sm:grid-cols-2 lg:grid-cols-3 items-center gap-4 lg:gap-8">
         <a
-          className="group flex flex-col h-full text-center rounded-lg hover:bg-green-50 focus:outline-none focus:bg-gray-100 p-4 sm:p-6 "
+          className="group flex flex-col h-full text-center rounded-lg hover:bg-gray-50 focus:outline-none focus:bg-gray-100 p-4 sm:p-6 "
           href="#"
         >
           <CircleHelp className="size-9 text-gray-800 mx-auto " />
@@ -27,7 +27,7 @@ const LinkSection = () => {
         </a>
 
         <a
-          className="group flex flex-col h-full text-center rounded-lg hover:bg-green-50 focus:outline-none focus:bg-gray-100 p-4 sm:p-6 "
+          className="group flex flex-col h-full text-center rounded-lg hover:bg-gray-50 focus:outline-none focus:bg-gray-100 p-4 sm:p-6 "
           href="#"
         >
           <MessagesSquare className="size-9 text-gray-800 mx-auto " />
@@ -45,7 +45,7 @@ const LinkSection = () => {
         </a>
 
         <a
-          className="group flex flex-col h-full text-center rounded-lg hover:bg-green-50 focus:outline-none focus:bg-gray-100 p-4 sm:p-6 "
+          className="group flex flex-col h-full text-center rounded-lg hover:bg-gray-50 focus:outline-none focus:bg-gray-100 p-4 sm:p-6 "
           href="#"
         >
           <FolderCode className="size-9 text-gray-800 mx-auto " />

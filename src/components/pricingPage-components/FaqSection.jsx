@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const FaqSection = () => {
   const [openFAQ, setOpenFAQ] = useState(null);
@@ -107,11 +108,11 @@ const FaqSection = () => {
           ))}
         </div>
         <p className="font-inter mx-auto mt-12 text-center text-base text-gray-500">
-          Can’t find the answer you’re looking for? Reach out to our
-          <a href="#" className="text-green-600 font-bold">
+          Can’t find the answer you’re looking for?
+          <Link to="/contact" href="#" className="text-green-600 font-bold">
             {" "}
-            customer support team.
-          </a>
+            Contact us
+          </Link>
         </p>
       </div>
     </section>

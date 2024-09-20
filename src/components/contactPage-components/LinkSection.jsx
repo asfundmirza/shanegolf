@@ -3,6 +3,7 @@ import { Circle, MessagesSquare } from "lucide-react";
 import { CircleHelp } from "lucide-react";
 import { FolderCode } from "lucide-react";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const LinkSection = () => {
   return (
@@ -25,8 +26,8 @@ const LinkSection = () => {
             </p>
           </div>
         </a>
-
-        <a
+        <Link
+          to="/faq"
           className="group flex flex-col h-full text-center rounded-lg hover:bg-gray-50 focus:outline-none focus:bg-gray-100 p-4 sm:p-6 "
           href="#"
         >
@@ -42,7 +43,7 @@ const LinkSection = () => {
               <ArrowRight className="shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1" />
             </p>
           </div>
-        </a>
+        </Link>
 
         <a
           className="group flex flex-col h-full text-center rounded-lg hover:bg-gray-50 focus:outline-none focus:bg-gray-100 p-4 sm:p-6 "

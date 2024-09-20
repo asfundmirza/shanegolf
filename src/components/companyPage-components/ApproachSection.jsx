@@ -1,5 +1,6 @@
 import React from "react";
 import pic2 from "../../assets/featureNav-pic2.webp";
+import { Link } from "react-router-dom";
 const ApproachSection = () => {
   return (
     <div class="bg-white">
@@ -108,7 +109,8 @@ const ApproachSection = () => {
               </div>
             </div>
 
-            <a
+            <Link
+              to="/contact"
               class="group inline-flex items-center gap-x-2 py-2 px-3 bg-green-600 text-white font-medium text-sm  rounded-full focus:outline-none"
               href="#"
             >
@@ -135,7 +137,7 @@ const ApproachSection = () => {
                 ></path>
               </svg>
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
       </div>

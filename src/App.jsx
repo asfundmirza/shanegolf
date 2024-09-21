@@ -18,6 +18,8 @@ import Company from "./pages/Company";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import TermsAndConditions from "./components/TermsAndConditions";
+import Careers from "./pages/Careers";
+import JobDescription from "./pages/JobDescription";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -60,6 +62,16 @@ function App() {
         <Route
           path="/faq"
           element={user ? <FAQ /> : <Navigate to="/signin" replace />}
+        />
+        <Route
+          path="/careers/:jobTitle"
+          element={
+            user ? <JobDescription /> : <Navigate to="/signin" replace />
+          }
+        />
+        <Route
+          path="/careers"
+          element={user ? <Careers /> : <Navigate to="/signin" replace />}
         />
         <Route
           path="/terms&conditions"

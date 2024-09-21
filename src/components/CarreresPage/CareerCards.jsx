@@ -65,8 +65,16 @@ const CareerCards = () => {
   const slugify = (name) => name.toLowerCase().replace(/\s+/g, "-");
 
   return (
-    <div>
-      {" "}
+    <div className="max-w-6xl px-4 xl:px-0 py-14 mx-auto">
+      <div className="max-w-3xl mx-auto text-center mb-10 lg:mb-14">
+        <h2 className="text-neutral-900 font-semibold text-4xl md:text-6xl md:leading-tight">
+          Job <span className="text-green-600">Oppourtunities</span> for you
+        </h2>
+        <p className="mt-1 text-neutral-400">
+          We are looking for talented individuals who want to make a difference
+          in the world.
+        </p>
+      </div>
       <div className="grid grid-cols-1 gap-6 p-4 md:grid-cols-2 lg:grid-cols-3">
         {boxContent.map((box, index) => (
           <div

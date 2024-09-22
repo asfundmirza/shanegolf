@@ -20,6 +20,7 @@ import FAQ from "./pages/FAQ";
 import TermsAndConditions from "./components/TermsAndConditions";
 import Careers from "./pages/Careers";
 import JobDescription from "./pages/JobDescription";
+import Blog from "./pages/Blog";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -72,6 +73,10 @@ function App() {
         <Route
           path="/careers"
           element={user ? <Careers /> : <Navigate to="/signin" replace />}
+        />
+        <Route
+          path="/blog"
+          element={user ? <Blog /> : <Navigate to="/signin" replace />}
         />
         <Route
           path="/terms&conditions"

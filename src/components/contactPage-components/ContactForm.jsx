@@ -8,7 +8,7 @@ const ContactForm = () => {
     <div className="bg-white">
       <div className="max-w-5xl px-4 xl:px-0 py-10 lg:pt-20 lg:pb-10 mx-auto">
         <div className="flex flex-col items-center w-full   mb-10 lg:mb-14">
-          <h2 className=" font-semibold text-3xl md:text-6xl md:leading-tight">
+          <h2 className=" font-bold text-3xl md:text-6xl md:leading-tight">
             Contact us
           </h2>
           <p className="mt-1 text-neutral-400">

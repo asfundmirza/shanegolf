@@ -1,7 +1,48 @@
-import React from "react";
+import React, { useEffect } from "react";
 import img1 from "../../assets/featureNav-pic1.webp";
 import img2 from "../../assets/featureNav-pic2.webp";
+
 const TopSection = () => {
+  useEffect(() => {
+    const spans = document.querySelectorAll(".hover-text span");
+
+    spans.forEach((span) => {
+      span.addEventListener("mouseenter", function () {
+        this.style.fontWeight = "900";
+        this.style.color = "rgb(22, 163, 74)";
+
+        const leftNeighbor = this.previousElementSibling;
+        const rightNeighbor = this.nextElementSibling;
+
+        if (leftNeighbor) {
+          leftNeighbor.style.fontWeight = "500";
+          leftNeighbor.style.color = "rgb(22, 163, 74)";
+        }
+        if (rightNeighbor) {
+          rightNeighbor.style.fontWeight = "500";
+          rightNeighbor.style.color = "rgb(22, 163, 74)";
+        }
+      });
+
+      span.addEventListener("mouseleave", function () {
+        this.style.fontWeight = "700";
+        this.style.color = "rgb(0, 0, 0)";
+
+        const leftNeighbor = this.previousElementSibling;
+        const rightNeighbor = this.nextElementSibling;
+
+        if (leftNeighbor) {
+          leftNeighbor.style.fontWeight = "700";
+          leftNeighbor.style.color = "rgb(0, 0, 0)";
+        }
+
+        if (rightNeighbor) {
+          rightNeighbor.style.fontWeight = "700";
+          rightNeighbor.style.color = "rgb(0, 0, 0)";
+        }
+      });
+    });
+  }, []);
   const sideCards = [
     {
       Title: "Instant Messaging for Safety Alerts",
@@ -28,14 +69,30 @@ const TopSection = () => {
       Category: "Team Collaboration", // Added category
     },
   ];
+  const Text = ({ children }) => {
+    return (
+      <>
+        {children.split("").map((child, idx) => (
+          <span
+            style={{
+              transition: "0.35s font-weight, 0.35s color",
+            }}
+            key={idx}
+          >
+            {child}
+          </span>
+        ))}
+      </>
+    );
+  };
   return (
     <section>
       {/* Container */}
       <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10  md:pt-20 md:pb-5">
         {/* Title */}
         <div className="flex flex-col items-center justify-center w-full">
-          <h2 className="text-center text-3xl font-bold md:text-6xl lg:text-left">
-            Insights & Updates
+          <h2 className="hover-text text-center text-3xl font-bold md:text-6xl ">
+            <Text>Insights & Updates</Text>
           </h2>
 
           <p className="mb-8 mt-4 text-center text-sm text-gray-500 sm:text-base md:mb-12 lg:mb-16 lg:text-left">

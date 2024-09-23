@@ -2,6 +2,7 @@ import React from "react";
 import img1 from "../../assets/featureNav-pic1.webp";
 import img2 from "../../assets/featureNav-pic3.webp";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const MiddleSection = () => {
   const cardContent = [
@@ -32,9 +33,9 @@ const MiddleSection = () => {
               scale: 1,
             }}
           >
-            <a
+            <Link
               className="group relative block rounded-xl focus:outline-none"
-              href="#"
+              to={`/blog/${card.bottomTitle}`}
             >
               <div className="shrink-0 relative rounded-xl h-[450px] overflow-hidden ">
                 <img
@@ -65,7 +66,7 @@ const MiddleSection = () => {
                   <p className="mt-2 text-white/80">{card.bottomSubtitle}</p>
                 </div>
               </div>
-            </a>
+            </Link>
           </motion.div>
         ))}
       </div>

@@ -5,8 +5,11 @@ import img2 from "../../assets/featureNav-pic2.webp";
 import img3 from "../../assets/blogImg1.webp";
 import img4 from "../../assets/blogImg2.webp";
 import img5 from "../../assets/blogImg3.webp";
+import { Link, useNavigate } from "react-router-dom";
 
 const LatestNews = () => {
+  const navigate = useNavigate();
+
   const [activeButton, setActiveButton] = useState("Product Updates");
 
   const handleButtonClick = (button) => {
@@ -97,12 +100,15 @@ const LatestNews = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             {bigCardsData.map((card, index) => (
-              <div className=" bg-gray-50 rounded-xl overflow-hidden">
+              <div
+                key={index}
+                className=" bg-gray-50 rounded-xl overflow-hidden"
+              >
                 <div className="relative h-80">
                   <img
                     className="h-80 w-full object-cover"
                     src={card.img}
-                    alt=""
+                    alt="img"
                   />
                   <span className="absolute bottom-5 right-5 bg-green-600 text-white text-sm font-semibold px-2.5 py-2 rounded-xl">
                     {card.category}
@@ -115,7 +121,10 @@ const LatestNews = () => {
                     </h2>
                     <p>{card.bottomSubtitle}</p>
                   </div>
-                  <button className="cursor-pointer bg-green-600 rounded-full text-white p-2">
+                  <button
+                    onClick={() => navigate(`/blog/${card.bottomTitle}`)}
+                    className="cursor-pointer bg-green-600 rounded-full text-white p-2"
+                  >
                     <ArrowRight />
                   </button>
                 </div>
@@ -125,24 +134,29 @@ const LatestNews = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {smallCardsData.map((card, index) => (
-              <div className="bg-gray-50 rounded-lg overflow-hidden">
-                <div className="relative h-72">
-                  <img
-                    className="h-72 w-full object-cover"
-                    src={card.img}
-                    alt=""
-                  />
-                  <span className="absolute bottom-5 right-5 bg-green-600 text-white text-sm font-semibold px-2.5 py-2 rounded-xl">
-                    {card.category}
-                  </span>
+              <Link to={`/blog/${card.bottomTitle}`}>
+                <div
+                  key={index}
+                  className="bg-gray-50 rounded-lg overflow-hidden"
+                >
+                  <div className="relative h-72">
+                    <img
+                      className="h-72 w-full object-cover"
+                      src={card.img}
+                      alt="img"
+                    />
+                    <span className="absolute bottom-5 right-5 bg-green-600 text-white text-sm font-semibold px-2.5 py-2 rounded-xl">
+                      {card.category}
+                    </span>
+                  </div>
+                  <div className="p-4">
+                    <h2 className="text-lg font-semibold mt-2">
+                      {card.bottomTitle}
+                    </h2>
+                    <p className="text-gray-500">{card.bottomSubtitle}</p>
+                  </div>
                 </div>
-                <div className="p-4">
-                  <h2 className="text-lg font-semibold mt-2">
-                    {card.bottomTitle}
-                  </h2>
-                  <p className="text-gray-500">{card.bottomSubtitle}</p>
-                </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

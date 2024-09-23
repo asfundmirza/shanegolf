@@ -21,6 +21,7 @@ import TermsAndConditions from "./components/TermsAndConditions";
 import Careers from "./pages/Careers";
 import JobDescription from "./pages/JobDescription";
 import Blog from "./pages/Blog";
+import BlogDescription from "./pages/BlogDescription";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -68,6 +69,12 @@ function App() {
           path="/careers/:jobTitle"
           element={
             user ? <JobDescription /> : <Navigate to="/signin" replace />
+          }
+        />
+        <Route
+          path="/blog/:blogTitle"
+          element={
+            user ? <BlogDescription /> : <Navigate to="/signin" replace />
           }
         />
         <Route

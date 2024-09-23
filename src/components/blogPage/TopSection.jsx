@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import img1 from "../../assets/featureNav-pic1.webp";
 import img2 from "../../assets/featureNav-pic2.webp";
+import { Link } from "react-router-dom";
 
 const TopSection = () => {
   useEffect(() => {
@@ -103,8 +104,8 @@ const TopSection = () => {
 
         {/* Content */}
         <div className="mx-auto grid gap-8 lg:grid-cols-2">
-          <a
-            href="#"
+          <Link
+            to={`/blog/Automated Incident Reporting`}
             className="flex flex-col gap-4 rounded-md [grid-area:1/1/4/2] lg:pr-8"
           >
             <img
@@ -127,11 +128,12 @@ const TopSection = () => {
                 <p>9 mins read</p>
               </div>
             </div>
-          </a>
+          </Link>
           <div className="md:flex md:justify-between lg:flex-col">
             {sideCards.map((card, index) => (
-              <a
-                href="#"
+              <Link
+                key={index}
+                to={`/blog/${card.Title}`}
                 className="flex flex-col pb-5 lg:mb-3 lg:flex-row lg:border-b lg:border-gray-300"
               >
                 <img
@@ -156,7 +158,7 @@ const TopSection = () => {
                     </div>
                   </div>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

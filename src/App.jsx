@@ -22,7 +22,8 @@ import Careers from "./pages/Careers";
 import JobDescription from "./pages/JobDescription";
 import Blog from "./pages/Blog";
 import BlogDescription from "./pages/BlogDescription";
-
+import { PricingProvider } from "./context/PricingContext";
+import CheckOut from "./pages/CheckOut";
 function App() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -45,78 +46,84 @@ function App() {
   }
 
   return (
-    <Router>
-      <Header />
+    <PricingProvider>
+      <Router>
+        <Header />
 
-      <Routes>
-        <Route
-          path="/home"
-          element={user ? <Home /> : <Navigate to="/signin" replace />}
-        />
-        <Route
-          path="/pricing"
-          element={user ? <PricingPage /> : <Navigate to="/signin" replace />}
-        />
-        <Route
-          path="/company"
-          element={user ? <Company /> : <Navigate to="/signin" replace />}
-        />
-        <Route
-          path="/faq"
-          element={user ? <FAQ /> : <Navigate to="/signin" replace />}
-        />
-        <Route
-          path="/careers/:jobTitle"
-          element={
-            user ? <JobDescription /> : <Navigate to="/signin" replace />
-          }
-        />
-        <Route
-          path="/blog/:blogTitle"
-          element={
-            user ? <BlogDescription /> : <Navigate to="/signin" replace />
-          }
-        />
-        <Route
-          path="/careers"
-          element={user ? <Careers /> : <Navigate to="/signin" replace />}
-        />
-        <Route
-          path="/blog"
-          element={user ? <Blog /> : <Navigate to="/signin" replace />}
-        />
-        <Route
-          path="/terms&conditions"
-          element={
-            user ? <TermsAndConditions /> : <Navigate to="/signin" replace />
-          }
-        />
-        <Route
-          path="/contact"
-          element={user ? <Contact /> : <Navigate to="/contact" replace />}
-        />
-        <Route
-          path="/signin"
-          element={!user ? <SignIn /> : <Navigate to="/home" replace />}
-        />
-        <Route
-          path="/signup"
-          element={!user ? <SignUp /> : <Navigate to="/home" replace />}
-        />
-        <Route
-          path="/"
-          element={
-            user ? (
-              <Navigate to="/home" replace />
-            ) : (
-              <Navigate to="/signin" replace />
-            )
-          }
-        />
-      </Routes>
+        <Routes>
+          <Route
+            path="/home"
+            element={user ? <Home /> : <Navigate to="/signin" replace />}
+          />
+          <Route
+            path="/pricing"
+            element={user ? <PricingPage /> : <Navigate to="/signin" replace />}
+          />
+          <Route
+            path="/company"
+            element={user ? <Company /> : <Navigate to="/signin" replace />}
+          />
+          <Route
+            path="/faq"
+            element={user ? <FAQ /> : <Navigate to="/signin" replace />}
+          />
+          <Route
+            path="/checkout"
+            element={user ? <CheckOut /> : <Navigate to="/signin" replace />}
+          />
+          <Route
+            path="/careers/:jobTitle"
+            element={
+              user ? <JobDescription /> : <Navigate to="/signin" replace />
+            }
+          />
+          <Route
+            path="/blog/:blogTitle"
+            element={
+              user ? <BlogDescription /> : <Navigate to="/signin" replace />
+            }
+          />
+          <Route
+            path="/careers"
+            element={user ? <Careers /> : <Navigate to="/signin" replace />}
+          />
+          <Route
+            path="/blog"
+            element={user ? <Blog /> : <Navigate to="/signin" replace />}
+          />
+          <Route
+            path="/terms&conditions"
+            element={
+              user ? <TermsAndConditions /> : <Navigate to="/signin" replace />
+            }
+          />
+          <Route
+            path="/contact"
+            element={user ? <Contact /> : <Navigate to="/contact" replace />}
+          />
+          <Route
+            path="/signin"
+            element={!user ? <SignIn /> : <Navigate to="/home" replace />}
+          />
+          <Route
+            path="/signup"
+            element={!user ? <SignUp /> : <Navigate to="/home" replace />}
+          />
+          <Route
+            path="/"
+            element={
+              user ? (
+                <Navigate to="/home" replace />
+              ) : (
+                <Navigate to="/signin" replace />
+              )
+            }
+          />
+        </Routes>
 
-      <Footer />
-    </Router>
+        <Footer />
+      </Router>
+    </PricingProvider>
   );
 }
 

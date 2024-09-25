@@ -1,14 +1,15 @@
-import React from "react";
-import TrustedClients from "./TrustedClients";
+import React, { useContext } from "react";
+import { PricingContext } from "../../context/PricingContext";
+import { Link } from "react-router-dom";
 
 const PricingCards = () => {
-  const essentialsFeatures = [
-    "AI Chat Trained on OSHA & Regulations",
-    "Toolbox Talk Generator",
-    "Near Miss Tracker",
-    "Hazard Input & Follow-up",
-    "OSHA 300 Log Input & Reporting",
-  ];
+  const { selectedAddOns, totalPrice, toggleAddOn, essentialsFeatures } =
+    useContext(PricingContext);
+
+  const isAddOnSelected = (addOn) => {
+    return selectedAddOns.some((item) => item.name === addOn.name);
+  };
+
   const addOns = [
     {
       name: "Hazard Identifier",
@@ -136,6 +137,8 @@ const PricingCards = () => {
         "Integrate safety training with popular e-learning platforms.",
     },
   ];
+  console.log(selectedAddOns);
+
   return (
     <div className=" lg:gap-[60px] gap-[20px]">
       <div className="overflow-hidden">
@@ -358,7 +361,10 @@ const PricingCards = () => {
               </span>
 
               {addOns.map((addOn, index) => (
-                <div className="flex flex-col gap-4 w-full justify-center lg:mt-0 mt-6 items-center">
+                <div
+                  key={index}
+                  className="flex flex-col gap-4 w-full justify-center lg:mt-0 mt-6 items-center"
+                >
                   <div className="block lg:hidden font-semibold text-sm">
                     {addOn.name}
                   </div>
@@ -368,6 +374,8 @@ const PricingCards = () => {
                         type="checkbox"
                         id={`checkbox-${index}`}
                         className="w-6 h-6 appearance-none border border-gray-500 rounded-md checked:bg-green-600 checked:border-transparent focus:outline-none transition duration-200"
+                        checked={isAddOnSelected(addOn)}
+                        onChange={() => toggleAddOn(addOn)}
                       />
                       <svg
                         className="absolute top-0 left-0 w-6 h-6 text-white opacity-100 transition-opacity duration-200 pointer-events-none checked-icon"
@@ -394,16 +402,16 @@ const PricingCards = () => {
                   Total
                 </div>
                 <div className="flex w-full justify-center font-semibold border-b border-gray-200 text-lg lg:mt-[48px]   ">
-                  20$ + Add-Ons
+                  {totalPrice}$
                 </div>
               </div>
               <div className="lg:col-span-1 flex w-full justify-center">
-                <a
+                <Link
+                  to="/checkout"
                   className="lg:w-full w-fit py-3 px-4 inline-flex justify-center mt-[30px] items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-green-600 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50"
-                  href="#"
                 >
                   Get started
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -467,168 +475,3 @@ const PricingCards = () => {
 };
 
 export default PricingCards;
-// <section>
-//   <div className="lg:relative lg:z-20 lg:mb-[750px] flex w-full flex-col bg-white gap-[60px]">
-//     {/* Container */}
-//     <div className="mx-auto max-w-8xl px-5 py-16 md:px-10  md:py-20">
-//       {/* Heading Container */}
-//       <div className="mx-auto mb-8 max-w-3xl text-center md:mb-12 lg:mb-16">
-//         {/* Heading */}
-//         <h2 className="text-3xl font-bold md:text-5xl">
-//           Simple &amp; Affordable Pricing
-//         </h2>
-//         {/* Subheading */}
-//         <p className="mt-4 text-sm text-gray-500 sm:text-base">
-//           Simple &amp; fixed pricing. 30 days money-back guarantee
-//         </p>
-//       </div>
-
-//       {/* Price Container */}
-//       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 md:gap-0 rounded-xl bg-green-50">
-//         {/* Price */}
-
-//         <div className="mx-auto flex w-full max-w-md flex-col items-start bg-green-50 rounded-md p-8">
-//           <div className="mb-4 rounded-md   py-1.5">
-//             <p className="md:text-4xl font-bold text-black sm:text-sm">
-//               Free
-//             </p>
-//           </div>
-//           <p className="mb-6 text-base font-light text-gray-500 md:mb-6 lg:mb-6">
-//             Create an Account and explore.
-//           </p>{" "}
-//           <p className="mb-6 text-base font-light text-gray-500 md:mb-10 lg:mb-10">
-//             Get access to free, powerful safety tools and explore the Safety
-//             Chat app
-//           </p>
-//           {/* <h2 className="mb-5 text-3xl font-bold md:text-5xl lg:mb-8">
-//             $99<span className="text-sm font-light sm:text-sm">/year</span>
-//           </h2> */}
-//           {essentialsFeatures.map((feature, index) => {
-//             return (
-//               <div key={index} className="mt-2 flex items-center">
-//                 <img
-//                   src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94a84be6cf60_check-mark.svg"
-//                   alt=""
-//                   className="mr-2 inline-block w-4"
-//                 />
-//                 <p className="text-base">{feature}</p>
-//               </div>
-//             );
-//           })}
-//           <a
-//             href="#"
-//             className=" w-full rounded-xl bg-green-600 px-6 py-3 text-center font-semibold text-white lg:mb-8"
-//           >
-//             Get started
-//           </a>
-//         </div>
-//         {/* Price */}
-//         <div className="mx-auto flex w-full max-w-md md:relative md:-mt-10 flex-col items-start rounded-xl bg-green-600 text-white  p-8">
-//           <div className="mb-4 rounded-md   py-1.5">
-//             <p className="md:text-4xl font-bold text-white sm:text-sm">
-//               Essentials
-//             </p>
-//           </div>
-//           <p className="mb-6 text-base font-light text-white md:mb-6 lg:mb-6">
-//             You can select the add-ons you want to.
-//           </p>
-//           <p className="mb-2">From</p>
-//           <h2 className="mb-5 text-3xl font-bold md:text-6xl lg:mb-8">
-//             $149<span className="text-sm font-light sm:text-sm">/year</span>
-//           </h2>
-
-//           <div className="flex w-full justify-center">
-//             <p className=" text-xl font-bold mb-4">Essential Features</p>
-//           </div>
-//           {essentialsFeatures.map((feature, index) => {
-//             return (
-//               <div key={index} className="mt-2 flex items-center">
-//                 <img
-//                   src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94a84be6cf60_check-mark.svg"
-//                   alt=""
-//                   className="mr-2 inline-block w-4"
-//                 />
-//                 <p className="text-base">{feature}</p>
-//               </div>
-//             );
-//           })}
-//           <div className="flex w-full justify-center">
-//             <p className=" text-xl font-bold mb-4 mt-6">Add Ons</p>
-//           </div>
-//           {addOns.map((addOn, index) => {
-//             return (
-//               <div key={index} className="mt-2 flex items-center">
-//                 <img
-//                   src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94a84be6cf60_check-mark.svg"
-//                   alt=""
-//                   className="mr-2 inline-block w-4"
-//                 />
-//                 <p className="text-base">{addOn.name}</p>
-//               </div>
-//             );
-//           })}
-
-//           <a
-//             href="#"
-//             className=" w-full rounded-xl bg-white px-6 py-3 text-center font-semibold text-green-600 md:mb-6 lg:mb-8"
-//           >
-//             Get started
-//           </a>
-//         </div>
-//         {/* Price */}
-//         <div className="mx-auto flex w-full max-w-md flex-col items-start rounded-md  p-8">
-//           <div className="mb-4 rounded-md   py-1.5">
-//             <p className="md:text-4xl font-bold text-black sm:text-sm">
-//               Full Suite
-//             </p>
-//           </div>
-//           <p className="mb-6 text-base font-light text-gray-500 md:mb-6 lg:mb-6">
-//             You can have all features in this suite.
-//           </p>
-//           <h2 className="mb-5 text-3xl font-bold md:text-5xl lg:mb-8">
-//             $299<span className="text-sm font-light sm:text-sm">/year</span>
-//           </h2>
-
-//           <div className="mt-2 flex items-center">
-//             <img
-//               src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94a84be6cf60_check-mark.svg"
-//               alt=""
-//               className="mr-2 inline-block w-4"
-//             />
-//             <p className="text-base">Premium Designs</p>
-//           </div>
-//           <div className="mt-2 flex items-center">
-//             <img
-//               src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94a84be6cf60_check-mark.svg"
-//               alt=""
-//               className="mr-2 inline-block w-4"
-//             />
-//             <p className="text-base">Exclusive Freebies</p>
-//           </div>
-//           <div className="mt-2 flex items-center">
-//             <img
-//               src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94a84be6cf60_check-mark.svg"
-//               alt=""
-//               className="mr-2 inline-block w-4"
-//             />
-//             <p className="text-base">Monthly Free Exclusive</p>
-//           </div>
-//           <div className="mt-2 mb-5 flex items-center">
-//             <img
-//               src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94a84be6cf60_check-mark.svg"
-//               alt=""
-//               className="mr-2 inline-block w-4"
-//             />
-//             <p className="text-base">Customer Support</p>
-//           </div>
-//           <a
-//             href="#"
-//             className=" w-full rounded-xl bg-green-600 px-6 py-3 text-center font-semibold text-white lg:mb-8"
-//           >
-//             Get started
-//           </a>
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-// </section>

@@ -50,7 +50,7 @@ const FaqSection = () => {
         </div>
         <div className="mt-10 flex w-full flex-col">
           {faqs.map((faq, index) => (
-            <>
+            <div key={index}>
               <div
                 key={index}
                 className="relative my-3 w-full rounded-md px-12 py-8"
@@ -104,7 +104,7 @@ const FaqSection = () => {
                 </button>
               </div>
               <div className="mr-4 ml-8 border border-gray-200"></div>
-            </>
+            </div>
           ))}
         </div>
         <p className="font-inter mx-auto mt-12 text-center text-base text-gray-500">

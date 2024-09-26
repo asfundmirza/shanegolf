@@ -1,14 +1,44 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { PricingContext } from "../../context/PricingContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const PricingCards = () => {
-  const { selectedAddOns, totalPrice, toggleAddOn, essentialsFeatures } =
-    useContext(PricingContext);
+  const {
+    selectedAddOns,
+    setSelectedAddOns,
+    selectedSuite,
+    setSelectedSuite,
+    totalPrice,
+    setTotalPrice,
+  } = useContext(PricingContext);
 
-  const isAddOnSelected = (addOn) => {
-    return selectedAddOns.some((item) => item.name === addOn.name);
-  };
+  const [localAddOns, setLocalAddOns] = useState([]);
+  const basePrice = 20;
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Reset selected add-ons and total price when the component mounts
+    setSelectedAddOns([]);
+    setTotalPrice(basePrice);
+    setSelectedSuite("");
+  }, [setSelectedAddOns, setTotalPrice, setSelectedSuite]);
+
+  useEffect(() => {
+    // Update total price whenever selectedAddOns changes
+    const addOnPrice = selectedAddOns.reduce(
+      (total, addOn) => total + addOn.price,
+      0
+    );
+    setTotalPrice(basePrice + addOnPrice);
+  }, [selectedAddOns, setTotalPrice]);
+
+  const essentialsFeatures = [
+    "AI Chat Trained on OSHA & Regulations",
+    "Toolbox Talk Generator",
+    "Near Miss Tracker",
+    "Hazard Input & Follow-up",
+    "OSHA 300 Log Input & Reporting",
+  ];
 
   const addOns = [
     {
@@ -137,7 +167,36 @@ const PricingCards = () => {
         "Integrate safety training with popular e-learning platforms.",
     },
   ];
-  console.log(selectedAddOns);
+
+  const isAddOnSelected = (addOn) => {
+    return selectedAddOns.some((item) => item.name === addOn.name);
+  };
+
+  const toggleAddOn = (addOn) => {
+    setSelectedAddOns((prev) => {
+      if (prev.some((item) => item.name === addOn.name)) {
+        return prev.filter((item) => item.name !== addOn.name);
+      } else {
+        return [...prev, addOn];
+      }
+    });
+  };
+  console.log(selectedAddOns, totalPrice);
+
+  const handleCheckout = (suite) => {
+    if (suite === "Essential") {
+      setSelectedSuite("Essential Suite");
+      setTotalPrice(
+        basePrice +
+          selectedAddOns.reduce((total, addOn) => total + addOn.price, 0)
+      );
+    } else if (suite === "Full Suite") {
+      setSelectedSuite("Full Suite");
+      setTotalPrice(150);
+      setSelectedAddOns(addOns);
+    }
+    navigate("/checkout");
+  };
 
   return (
     <div className=" lg:gap-[60px] gap-[20px]">
@@ -180,9 +239,9 @@ const PricingCards = () => {
                               viewBox="0 0 24 24"
                               fill="none"
                               stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                             >
                               <polyline points="20 6 9 17 4 12" />
                             </svg>
@@ -402,15 +461,16 @@ const PricingCards = () => {
                   Total
                 </div>
                 <div className="flex w-full justify-center font-semibold border-b border-gray-200 text-lg lg:mt-[48px]   ">
-                  {totalPrice}$
+                  ${totalPrice}
                 </div>
               </div>
               <div className="lg:col-span-1 flex w-full justify-center">
                 <Link
                   to="/checkout"
                   className="lg:w-full w-fit py-3 px-4 inline-flex justify-center mt-[30px] items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-green-600 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50"
+                  onClick={() => handleCheckout("Essential")}
                 >
-                  Get started
+                  Checkout
                 </Link>
               </div>
             </div>
@@ -421,7 +481,10 @@ const PricingCards = () => {
               </span>
 
               {addOns.map((addOn, index) => (
-                <div className="flex flex-col gap-4 w-full justify-center lg:mt-0 mt-6 items-center">
+                <div
+                  key={index}
+                  className="flex flex-col gap-4 w-full justify-center lg:mt-0 mt-6 items-center"
+                >
                   <div className="block lg:hidden font-semibold text-sm">
                     {addOn.name}
                   </div>
@@ -459,12 +522,13 @@ const PricingCards = () => {
                 </div>
               </div>
               <div className="lg:col-span-1 flex w-full justify-center">
-                <a
+                <Link
                   className="lg:w-full w-fit py-3 px-4 inline-flex justify-center mt-[30px] items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-green-600 text-white shadow-sm hover:bg-green-500 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-green-500"
-                  href="#"
+                  to="/checkout"
+                  onClick={() => handleCheckout("Full Suite")}
                 >
-                  Get started
-                </a>
+                  Checkout
+                </Link>
               </div>
             </div>
           </div>

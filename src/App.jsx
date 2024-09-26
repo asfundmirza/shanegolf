@@ -24,6 +24,9 @@ import Blog from "./pages/Blog";
 import BlogDescription from "./pages/BlogDescription";
 import { PricingProvider } from "./context/PricingContext";
 import CheckOut from "./pages/CheckOut";
+import Return from "./components/checkout/Return";
+import Success from "./components/checkout/Success";
+
 function App() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -72,6 +75,10 @@ function App() {
             element={user ? <CheckOut /> : <Navigate to="/signin" replace />}
           />
           <Route
+            path="/return"
+            element={user ? <Return /> : <Navigate to="/signin" replace />}
+          />
+          <Route
             path="/careers/:jobTitle"
             element={
               user ? <JobDescription /> : <Navigate to="/signin" replace />
@@ -86,6 +93,10 @@ function App() {
           <Route
             path="/careers"
             element={user ? <Careers /> : <Navigate to="/signin" replace />}
+          />
+          <Route
+            path="/success"
+            element={user ? <Success /> : <Navigate to="/signin" replace />}
           />
           <Route
             path="/blog"
@@ -121,7 +132,7 @@ function App() {
           />
         </Routes>
 
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </PricingProvider>
   );

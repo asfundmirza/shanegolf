@@ -43,6 +43,8 @@ const StripeForm = () => {
       });
   }, []);
 
+  console.log(selectedAddOns, selectedSuite);
+
   const options = { fetchClientSecret };
 
   return (

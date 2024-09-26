@@ -21,7 +21,7 @@ const PricingCards = () => {
     setSelectedAddOns([]);
     setTotalPrice(basePrice);
     setSelectedSuite("");
-  }, [setSelectedAddOns, setTotalPrice, setSelectedSuite]);
+  }, []);
 
   useEffect(() => {
     // Update total price whenever selectedAddOns changes

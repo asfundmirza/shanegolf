@@ -79,11 +79,19 @@ app.get("/session-status", async (req, res) => {
 
   try {
     const session = await stripe.checkout.sessions.retrieve(sessionId);
+    let invoiceUrl = null;
+
+    // Check if the session has an invoice
+    if (session.invoice) {
+      const invoice = await stripe.invoices.retrieve(session.invoice);
+      invoiceUrl = invoice.hosted_invoice_url;
+    }
+
     res.json({
       status: session.status,
-      //   status: "open",
-
+      paymentStatus: session.payment_status, // 'payment_status' instead of 'status' for the final state
       customer_email: session.customer_email,
+      invoice_url: invoiceUrl, // Pass the invoice URL
     });
   } catch (error) {
     console.error("Error fetching session:", error);

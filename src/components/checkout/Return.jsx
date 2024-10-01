@@ -46,7 +46,10 @@ const Return = () => {
   }, [retryCount]);
 
   if (status === "open") {
-    return <Navigate to="/pricing" />;
+    return <Navigate to="/checkout" />;
+  }
+  if (status === "failed") {
+    return <Navigate to="/error" />;
   }
 
   if (status === "complete") {

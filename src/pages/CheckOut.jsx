@@ -4,14 +4,9 @@ import StripeForm from "../components/checkout/StripeForm";
 const Checkout = () => {
   return (
     <div className="lg:relative lg:z-20 lg:mb-[750px] flex w-full flex-col bg-white ">
-      {/* <div className="flex flex-col md:flex-row w-full">
-        <div className="w-full md:w-1/2">
-          <CheckoutDetails />
-        </div> */}
       <div className="w-full mx-auto md:py-20">
         <StripeForm />
       </div>
-      {/* </div> */}
     </div>
   );
 };

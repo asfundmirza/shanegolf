@@ -26,6 +26,7 @@ import { PricingProvider } from "./context/PricingContext";
 import CheckOut from "./pages/CheckOut";
 import Return from "./components/checkout/Return";
 import Success from "./components/checkout/Success";
+import Error from "./pages/Error";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -103,6 +104,10 @@ function App() {
             element={user ? <Blog /> : <Navigate to="/signin" replace />}
           />
           <Route
+            path="/error"
+            element={user ? <Error /> : <Navigate to="/signin" replace />}
+          />
+          <Route
             path="/terms&conditions"
             element={
               user ? <TermsAndConditions /> : <Navigate to="/signin" replace />
@@ -132,7 +137,7 @@ function App() {
           />
         </Routes>
 
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     </PricingProvider>
   );

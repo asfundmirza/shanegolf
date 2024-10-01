@@ -5,7 +5,7 @@ export const PricingContext = createContext();
 export const PricingProvider = ({ children }) => {
   const [selectedAddOns, setSelectedAddOns] = useState([]);
   const [selectedSuite, setSelectedSuite] = useState("");
-  const [totalPrice, setTotalPrice] = useState(20); // Initialize with base price
+  const [totalPrice, setTotalPrice] = useState(20);
 
   return (
     <PricingContext.Provider

@@ -262,8 +262,9 @@ const PricingCards = () => {
                       <button
                         type="button"
                         className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg  bg-green-600 text-white shadow-sm hover:bg-green-500"
+                        onClick={() => handleCheckout("Essential")}
                       >
-                        Start Here
+                        Checkout
                       </button>
                     </div>
                   </div>
@@ -326,8 +327,9 @@ const PricingCards = () => {
                       <button
                         type="button"
                         className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-xl border   bg-white text-green-600 hover:text-green-500 "
+                        onClick={() => handleCheckout("Full Suite")}
                       >
-                        Start Here
+                        Checkout
                       </button>
                     </div>
                   </div>

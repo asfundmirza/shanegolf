@@ -27,6 +27,9 @@ import CheckOut from "./pages/CheckOut";
 import Return from "./components/checkout/Return";
 import Success from "./components/checkout/Success";
 import Error from "./pages/Error";
+import InviteUser from "./pages/InviteUser";
+import FinishSignUp from "./pages/FinishSignUp";
+import PasswordSetup from "./pages/PasswordSetup";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -76,8 +79,24 @@ function App() {
             element={user ? <CheckOut /> : <Navigate to="/signin" replace />}
           />
           <Route
+            path="/passwordSetup"
+            element={
+              user ? <PasswordSetup /> : <Navigate to="/signin" replace />
+            }
+          />
+          <Route
+            path="/finishSignUp"
+            element={
+              user ? <FinishSignUp /> : <Navigate to="/signin" replace />
+            }
+          />
+          <Route
             path="/return"
             element={user ? <Return /> : <Navigate to="/signin" replace />}
+          />
+          <Route
+            path="/invite"
+            element={user ? <InviteUser /> : <Navigate to="/signin" replace />}
           />
           <Route
             path="/careers/:jobTitle"
@@ -137,7 +156,7 @@ function App() {
           />
         </Routes>
 
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </PricingProvider>
   );

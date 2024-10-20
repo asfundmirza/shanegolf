@@ -30,6 +30,7 @@ import Error from "./pages/Error";
 import InviteUser from "./pages/InviteUser";
 import FinishSignUp from "./pages/FinishSignUp";
 import PasswordSetup from "./pages/PasswordSetup";
+import Consulting from "./pages/Consulting";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -73,6 +74,10 @@ function App() {
           <Route
             path="/faq"
             element={user ? <FAQ /> : <Navigate to="/signin" replace />}
+          />
+          <Route
+            path="/consulting"
+            element={user ? <Consulting /> : <Navigate to="/signin" replace />}
           />
           <Route
             path="/checkout"

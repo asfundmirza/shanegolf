@@ -11,7 +11,7 @@ import {
 const OurExperties = () => {
   const teamMembers = [
     {
-      picture: "https://via.placeholder.com/150", // Placeholder image
+      picture: "https://via.placeholder.com/150",
       fullName: "Shane Golf",
       designation: "Founder / CEO, Certified Safety Professional (CSP)",
       bio: "As a Certified Safety Professional (CSP) with over 15 years of experience, Akshay Kumar leads Safety Chat with a vision to enhance workplace safety across multiple industries. His deep expertise ensures our clients achieve compliance with the highest safety standards.",
@@ -23,7 +23,7 @@ const OurExperties = () => {
       ],
     },
     {
-      picture: "https://via.placeholder.com/150", // Placeholder image
+      picture: "https://via.placeholder.com/150",
       fullName: "Alex Watt",
       designation: "Business Head, Certified Industrial Hygienist (CIH)",
       bio: "Raima Ray, a Certified Industrial Hygienist (CIH), brings a wealth of knowledge in hazard identification and risk mitigation. Her leadership ensures that Safety Chat provides tailored safety solutions to meet specific industry challenges.",
@@ -35,7 +35,7 @@ const OurExperties = () => {
       ],
     },
     {
-      picture: "https://via.placeholder.com/150", // Placeholder image
+      picture: "https://via.placeholder.com/150",
       fullName: "Sara Williams",
       designation: "Senior Safety Consultant, OSHA Outreach Trainer",
       bio: "With certifications as an OSHA Outreach Trainer, Arjun Kapur focuses on providing training programs that empower employees to maintain safe workplaces. His expertise spans construction and industrial safety regulations.",
@@ -47,7 +47,7 @@ const OurExperties = () => {
       ],
     },
     {
-      picture: "https://via.placeholder.com/150", // Placeholder image
+      picture: "https://via.placeholder.com/150",
       fullName: "Michal Lee",
       designation: "Marketing Head, Safety Compliance Specialist",
       bio: "Alia Bhatt manages the marketing efforts at Safety Chat while also serving as a Safety Compliance Specialist. Her dual role ensures clients not only meet safety standards but also understand the importance of compliance in promoting workplace safety.",

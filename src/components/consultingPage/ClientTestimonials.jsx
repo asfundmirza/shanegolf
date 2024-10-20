@@ -106,7 +106,7 @@ const TestimonialItem = ({ item }) => {
 
 const ClientTestimonials = () => {
   const [index, setIndex] = useState(0);
-  const [direction, setDirection] = useState(""); // 'next' or 'prev' for animation
+  const [direction, setDirection] = useState("");
 
   const handleControl = (type) => {
     setDirection(type);

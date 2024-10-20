@@ -53,7 +53,7 @@ const ServiceItem = ({ service }) => (
     <div className="p-4 lg:p-8">
       <div className="text-[40px] text-green-600 mb-2">{service.icon}</div>
       <h5 className="text-xl font-medium my-6">{service.title}</h5>
-      <p className="opacity-75 mt-4">{service.description}</p>
+      <p className=" text-neutral-400 mt-4">{service.description}</p>
     </div>
   </div>
 );
@@ -107,21 +107,21 @@ function ShapeTwo() {
   );
 }
 
-const Service20 = () => {
+const ServicesOffered = () => {
   return (
-    <section className=" py-14 md:py-24 bg-gray-50  text-zinc-900  relative z-[1] overflow-hidden">
+    <section className=" py-14 md:py-24 bg-gray-50  text-zinc-900 md:mt-14  relative z-[1] overflow-hidden">
       <ShapeOne />
       <ShapeTwo />
 
       <div className="container max-w-7xl px-4 sm:px-6 lg:px-8  mx-auto">
-        <div className="flex w-full justify-center md:mb-14 ">
+        <div className="flex w-full justify-center md:mb-14 mb-7 ">
           <h1 className="block md:text-5xl font-bold text-gray-800 text-4xl lg:text-6xl lg:leading-tight">
             <span className="text-green-600">Services</span> We Provide
           </h1>
         </div>
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 ">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="col-span-2 md:col-span-1 space-y-6">
                 {serviceList.slice(0, 2).map((service, i) => (
                   <div key={i}>
@@ -152,7 +152,7 @@ const Service20 = () => {
   );
 };
 
-export default Service20;
+export default ServicesOffered;
 
 // For typescripts
 

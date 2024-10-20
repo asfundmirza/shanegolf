@@ -52,7 +52,7 @@ const IndustriesServed = () => {
       <div className="flex flex-col justify-center items-center gap-4">
         <div>
           <h2 className="text-3xl md:text-6xl font-bold text-center text-gray-800">
-            Industries Served
+            <span className="text-green-600">Industries</span> Served
           </h2>
         </div>
         <div className="max-w-3xl mx-auto text-center">

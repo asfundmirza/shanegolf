@@ -1,57 +1,57 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import {
-  faCamera,
-  faCannabis,
-  faRandom,
-} from "@fortawesome/free-solid-svg-icons";
-import { faAsymmetrik } from "@fortawesome/free-brands-svg-icons";
+  ShieldCheck,
+  BookOpen,
+  Search,
+  GraduationCap,
+  FileCheck,
+  Wrench,
+} from "lucide-react";
 
 const serviceList = [
   {
-    icon: faCannabis,
+    icon: <ShieldCheck />,
     title: "Safety Audits & Inspections",
     description:
-      "Banks likewise put away cash to develop their hold of cash. What they do is directed by laws. Those laws vary in various nations",
+      "Comprehensive safety reviews ensuring compliance with regulations and identifying risks.",
   },
   {
-    icon: faRandom,
+    icon: <BookOpen />,
     title: "Safety Program Development",
     description:
-      "Banks likewise put away cash to develop their hold of cash. What they do is directed by laws. Those laws vary in various nations",
+      "Tailored safety programs designed to meet the specific needs of your business.",
   },
   {
-    icon: faCamera,
+    icon: <Search />,
     title: "Incident Investigation & Reporting",
     description:
-      "Banks likewise put away cash to develop their hold of cash. What they do is directed by laws. Those laws vary in various nations",
+      "Thorough investigations to determine the cause of incidents and prevent recurrence.",
   },
   {
-    icon: faAsymmetrik,
+    icon: <GraduationCap />,
     title: "Safety Training & Education",
     description:
-      "Banks likewise put away cash to develop their hold of cash. What they do is directed by laws. Those laws vary in various nations",
+      "Effective training programs to educate employees on workplace safety practices.",
   },
   {
-    icon: faAsymmetrik,
+    icon: <FileCheck />,
     title: "Compliance Assistance",
     description:
-      "Banks likewise put away cash to develop their hold of cash. What they do is directed by laws. Those laws vary in various nations",
+      "Helping businesses meet regulatory requirements and avoid compliance issues.",
   },
   {
-    icon: faAsymmetrik,
+    icon: <Wrench />,
     title: "Specialized Services",
     description:
-      "Banks likewise put away cash to develop their hold of cash. What they do is directed by laws. Those laws vary in various nations",
+      "Customized safety services for unique business needs and specific industry challenges.",
   },
 ];
 
 const ServiceItem = ({ service }) => (
-  <div className="bg-white  shadow h-full p-3 md:mt-4">
+  <div className="bg-white  shadow h-full p-3 md:mt-4 border border-transparent hover:border-green-600  transition-transform transform hover:scale-105 duration-300">
     <div className="p-4 lg:p-8">
-      <div className="text-[40px] text-blue-600 mb-2">
-        <FontAwesomeIcon icon={service.icon} />
-      </div>
+      <div className="text-[40px] text-green-600 mb-2">{service.icon}</div>
       <h5 className="text-xl font-medium my-6">{service.title}</h5>
       <p className="opacity-75 mt-4">{service.description}</p>
     </div>

@@ -23,16 +23,16 @@ const testimonialList = [
     description:
       "Their team played a critical role in helping us optimize our energy solutions. From day one, they understood our vision and provided us with the tools and insights needed to scale efficiently. We’ve seen remarkable growth thanks to their commitment.",
   },
-  {
-    author: {
-      fullName: "David Thompson",
-      picture: "https://via.placeholder.com/150",
-      designation: "Project Lead, Innovate Builders Co.",
-    },
-    rating: 4.8,
-    description:
-      "We’ve never worked with a more dedicated and knowledgeable team. They not only met but exceeded our expectations in every way. Our project timelines have improved significantly, and we’re thrilled with the results. A true game-changer for our company!",
-  },
+  // {
+  //   author: {
+  //     fullName: "David Thompson",
+  //     picture: "https://via.placeholder.com/150",
+  //     designation: "Project Lead, Innovate Builders Co.",
+  //   },
+  //   rating: 4.8,
+  //   description:
+  //     "We’ve never worked with a more dedicated and knowledgeable team. They not only met but exceeded our expectations in every way. Our project timelines have improved significantly, and we’re thrilled with the results. A true game-changer for our company!",
+  // },
 ];
 
 const Rating = ({ rating, showLabel, className, ...rest }) => (
@@ -95,7 +95,7 @@ const TestimonialItem = ({ testimonial, index }) => (
 
 const SuccessStories = () => {
   return (
-    <section className="ezy__testimonial11 light py-14 bg-white  text-zinc-900 ">
+    <section className=" py-14 bg-white  text-gray-900 ">
       <div className="container px-4 max-w-7xl mx-auto">
         <div className="flex justify-center text-center mb-6 lg:mb-12">
           <div className="max-w-md">

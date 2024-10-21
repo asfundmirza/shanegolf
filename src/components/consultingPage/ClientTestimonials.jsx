@@ -118,7 +118,7 @@ const ClientTestimonials = () => {
     }
   };
   return (
-    <section className=" py-14 md:py-24   text-gray-800 ">
+    <section className=" py-14   text-gray-800 ">
       <div className="container px-4 mx-auto max-w-7xl relative">
         <div className="flex justify-center text-center mb-6 lg:mb-12">
           <div className="max-w-2xl">

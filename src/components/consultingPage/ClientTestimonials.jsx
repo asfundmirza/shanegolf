@@ -163,14 +163,22 @@ const ClientTestimonials = () => {
 
         <div className="relative flex justify-center items-center my-12">
           <button
-            className="text-lg bg-green-600 shadow-2xl  opacity-75 hover:opacity-100 w-12 h-12 flex justify-center items-center rounded-full mr-4"
+            className={`text-lg bg-green-600 shadow-2xl opacity-75 hover:opacity-100 w-12 h-12 flex justify-center items-center rounded-full mr-4 ${
+              index === 0 ? "opacity-20 hover:opacity-20 " : ""
+            }`}
             onClick={() => handleControl("prev")}
+            disabled={index === 0}
           >
             <FontAwesomeIcon icon={faAngleLeft} className="text-white" />
           </button>
           <button
-            className="text-lg bg-green-600 shadow-2xl d opacity-75 hover:opacity-100 w-12 h-12 flex justify-center items-center rounded-full"
+            className={`text-lg bg-green-600 shadow-2xl opacity-75 hover:opacity-100 w-12 h-12 flex justify-center items-center rounded-full ${
+              index === testimonialList.length - 1
+                ? "opacity-20 hover:opacity-20 "
+                : ""
+            }`}
             onClick={() => handleControl("next")}
+            disabled={index === testimonialList.length - 1}
           >
             <FontAwesomeIcon icon={faAngleRight} className="text-white" />
           </button>
